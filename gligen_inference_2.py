@@ -404,7 +404,11 @@ def run(meta, config, starting_noise=None):
         z0 = autoencoder.encode( input_image )
         
         masked_z = z0*inpainting_mask
-        inpainting_extra_input = torch.cat([masked_z,inpainting_mask], dim=1)              
+        # inpainting_extra_input = torch.cat([masked_z,inpainting_mask], dim=1)
+        inpainting_extra_input = torch.cat([masked_z,inpainting_mask], dim=1).to(device, dtype=torch.float64)
+        print("---thum editing---")
+        print("masked_z input type", type(masked_z))
+        print('inpainting_extra_input type', type(inpainting_extra_input))              
     
 
     # - - - - - input for gligen - - - - - #
