@@ -444,7 +444,7 @@ class UNetModel(nn.Module):
         if self.inpaint_mode:
             if self.downsample_net != None:
                 breakpoint() # TODO: think about this case 
-            h = th.cat( [h, input["inpainting_extra_input"]], dim=1 )
+            h = th.cat( [h, input["inpainting_extra_input"]], dim=1 ).to("cuda", th.float64)
         
         # Text input 
         context = input["context"]
