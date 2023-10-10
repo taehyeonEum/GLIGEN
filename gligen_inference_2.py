@@ -645,10 +645,12 @@ if __name__ == "__main__":
     starting_noise = None
     n = 0
     for meta in meta_list:
-        run(meta, args, starting_noise)
         print("\n\n\n loop",end="" )
         print(n)
         print("\n\n\n loop",end="" )
+        run(meta, args, starting_noise)
+        n+=1
+        
     
 
 
