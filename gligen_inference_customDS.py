@@ -474,18 +474,18 @@ if __name__ == "__main__":
         
         dict(
             ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
-            input_image = "customDS/lv_chair_smaller_square.png", #background image
+            input_image = "customDS/living room.png", #background image
             prompt = "a chair in the living room", 
-            images = [ 'customDS/chair_smaller.png'], #object image
+            images = [ 'customDS/chair.png'], #object image
             locations = [ [(210/1160), (462/160), (833/1160), (1121/1160)] ], # mask will be derived from box 
             save_folder_name="customDS make chair bigger" # folder title for 5 images
         ),
 
         dict(
             ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
-            input_image = "customDS/lv_chair_smaller_square.png", #background image
+            input_image = "customDS/living room.png", #background image
             prompt = "a chair in the living room", 
-            images = [ 'customDS/chair_smaller.png'], #object image
+            images = [ 'customDS/chair.png'], #object image
             locations = [ [(455/1160), (740/160), (833/1160), (1121/1160)] ], # mask will be derived from box 
             save_folder_name="customDS make chair smaller" # folder title for 5 images
         ),
