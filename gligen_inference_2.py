@@ -406,9 +406,9 @@ def run(meta, config, starting_noise=None):
         masked_z = z0*inpainting_mask
         inpainting_extra_input = torch.cat([masked_z,inpainting_mask], dim=1)
         # inpainting_extra_input = torch.cat([masked_z,inpainting_mask], dim=1).to(device, dtype=torch.float64)
-        print("---thum editing---")
-        print("masked_z input type", type(masked_z))
-        print('inpainting_extra_input type', type(inpainting_extra_input))              
+        # print("---thum editing---")
+        # print("masked_z input type", type(masked_z))
+        # print('inpainting_extra_input type', type(inpainting_extra_input))              
     
 
     # - - - - - input for gligen - - - - - #
@@ -643,9 +643,12 @@ if __name__ == "__main__":
 
     starting_noise = torch.randn(args.batch_size, 4, 64, 64).to(device)
     starting_noise = None
+    n = 0
     for meta in meta_list:
         run(meta, args, starting_noise)
-
+        print("\n\n\n loop",end="" )
+        print(n)
+        print("\n\n\n loop",end="" )
     
 
 
