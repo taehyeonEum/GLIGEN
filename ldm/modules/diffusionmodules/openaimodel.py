@@ -438,6 +438,8 @@ class UNetModel(nn.Module):
 
         # input tensor  
         h = th.tensor(input["x"]).to('cuda')
+        print("input['inpainting_extra_input'] type \n", type(input["inpainting_extra_input"]))
+        input["inpainting_extra_input"] = th.tensor(input["inpainting_extra_input"]).to('cuda')
         if self.downsample_net != None and self.first_conv_type=="GLIGEN":
             temp  = self.downsample_net(input["grounding_extra_input"])
             h = th.cat( [h,temp], dim=1 )
