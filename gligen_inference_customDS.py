@@ -472,23 +472,44 @@ if __name__ == "__main__":
 
         # - - - - - - - - GLIGEN on image grounding for inpainting - - - - - - - - # 
         
+        #intention : 기존에 테이블을 자르면서 (바운딩박스에 테이블 전체를 포함시키지 않음)
         dict(
             ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
-            input_image = "customDS/room_plants.jpg", #background image
-            prompt = "a living room with a bigger plants with same appearance", 
-            images = [ 'customDS/plant.png'], #object image
-            locations = [ [0.1, 0.2, 0.4, 0.9] ], # mask will be derived from box 
-            save_folder_name="customDS make plant bigger (detailed)" # folder title for 5 images
+            input_image = "customDS/room_long_table.jpg", #background image
+            prompt = "a living room with a shorter table than original", 
+            images = [ 'customDS/long_table.png'], #object image
+            locations = [ [0.2, 0.8, 0.5, 0.9] ], # mask will be derived from box 
+            save_folder_name="customDS make table shorter small bounding box" # folder title for 5 images
         ),
         
+        #intention : 전체 테이블을 바운딩박스에 포함시키고 프롬프트 만으로 크기 조절 시도
         dict(
             ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
-            input_image = "customDS/room_plants.jpg", #background image
-            prompt = "a living room with a bigger plants", 
-            images = [ 'customDS/plant.png'], #object image
-            locations = [ [0.1, 0.2, 0.4, 0.9] ], # mask will be derived from box 
-            save_folder_name="customDS make plant bigger" # folder title for 5 images
+            input_image = "customDS/room_long_table.jpg", #background image
+            prompt = "a living room with a shorter table than original", 
+            images = [ 'customDS/long_table.png'], #object image
+            locations = [ [0.2, 0.8, 0.8, 0.9] ], # mask will be derived from box 
+            save_folder_name="customDS make table shorter enough bounding box" # folder title for 5 images
         ),
+        
+        
+        # dict(
+        #     ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
+        #     input_image = "customDS/room_plants.jpg", #background image
+        #     prompt = "a living room with a bigger plants with same appearance", 
+        #     images = [ 'customDS/plant.png'], #object image
+        #     locations = [ [0.1, 0.2, 0.4, 0.9] ], # mask will be derived from box 
+        #     save_folder_name="customDS make plant bigger (detailed)" # folder title for 5 images
+        # ),
+        
+        # dict(
+        #     ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
+        #     input_image = "customDS/room_plants.jpg", #background image
+        #     prompt = "a living room with a bigger plants", 
+        #     images = [ 'customDS/plant.png'], #object image
+        #     locations = [ [0.1, 0.2, 0.4, 0.9] ], # mask will be derived from box 
+        #     save_folder_name="customDS make plant bigger" # folder title for 5 images
+        # ),
         
         # dict(
         #     ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
