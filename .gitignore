@@ -2,7 +2,7 @@
 .idea
 *.iml
 out
-# gen
+gen
 gligen_checkpoints/*.bin
 
 ### Vim template
