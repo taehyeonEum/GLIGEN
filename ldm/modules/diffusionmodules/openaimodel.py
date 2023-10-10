@@ -437,7 +437,7 @@ class UNetModel(nn.Module):
         emb = self.time_embed(t_emb)
 
         # input tensor  
-        h = input["x"]
+        h = th.tensor(input["x"]).to('cuda')
         if self.downsample_net != None and self.first_conv_type=="GLIGEN":
             temp  = self.downsample_net(input["grounding_extra_input"])
             h = th.cat( [h,temp], dim=1 )
