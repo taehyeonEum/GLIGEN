@@ -437,17 +437,18 @@ class UNetModel(nn.Module):
         emb = self.time_embed(t_emb)
 
         # input tensor  
-        h = th.tensor(input["x"]).to('cuda')
+        h = (input["x"])
+        print("\n\n\n",type(h),"\n\n")
         if self.downsample_net != None and self.first_conv_type=="GLIGEN":
             temp  = self.downsample_net(input["grounding_extra_input"])
             h = th.cat( [h,temp], dim=1 )
         if self.inpaint_mode:
             if self.downsample_net != None:
                 breakpoint() # TODO: think about this case 
-            print("thum edit\n", type(th.cat( [h, input["inpainting_extra_input"]], dim=1 )))
-            print("input['inpainting_extra_input'] type \n", type(input["inpainting_extra_input"]))
-            input["inpainting_extra_input"] = th.tensor(input["inpainting_extra_input"]).to('cuda')
-            h = th.tensor(th.cat( [h, input["inpainting_extra_input"]], dim=1 )).to('cuda')
+            # print("thum edit\n", type(th.cat( [h, input["inpainting_extra_input"]], dim=1 )))
+            # print("input['inpainting_extra_input'] type \n", type(input["inpainting_extra_input"]))
+            # input["inpainting_extra_input"] = th.tensor(input["inpainting_extra_input"]).to('cuda')
+            h = th.cat( [h, input["inpainting_extra_input"]], dim=1 )
         
         # Text input 
         context = input["context"]
