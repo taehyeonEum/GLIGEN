@@ -438,7 +438,7 @@ class UNetModel(nn.Module):
 
         # input tensor  
         h = (input["x"])
-        print("\n\n\n",type(h),"\n\n")
+        print("\n\n\n",type(h),"\n\n") #type: torch.Tensor
         if self.downsample_net != None and self.first_conv_type=="GLIGEN":
             temp  = self.downsample_net(input["grounding_extra_input"])
             h = th.cat( [h,temp], dim=1 )

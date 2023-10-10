@@ -471,6 +471,7 @@ if __name__ == "__main__":
     meta_list = [ 
 
         # - - - - - - - - GLIGEN on text grounding for generation - - - - - - - - # 
+        '''    
         dict(
             ckpt = "./gligen_checkpoints/diffusion_pytorch_model.bin",
             prompt = "a teddy bear sitting next to a bird",
@@ -517,7 +518,7 @@ if __name__ == "__main__":
             image_mask =[0,1],  # the first image feature will be masked
             save_folder_name="generation_box_text_style"
         ), 
-
+    '''
 
         # - - - - - - - - GLIGEN on image grounding for inpainting - - - - - - - - # 
         dict(
@@ -529,7 +530,7 @@ if __name__ == "__main__":
             save_folder_name="inpainting_box_image"
         ),
 
-
+    '''
 
         # - - - - - - - - GLIGEN on hed grounding for generation - - - - - - - - # 
         dict(
@@ -635,8 +636,7 @@ if __name__ == "__main__":
             alpha_type = [0.3, 0.0, 0.7],
             save_folder_name="keypoint"
         ),
-
-
+    '''
 
     ]
 
@@ -647,7 +647,7 @@ if __name__ == "__main__":
     for meta in meta_list:
         print("\n\n\n loop",end="" )
         print(n)
-        print("\n\n\n loop",end="" )
+        print("\n\n\n",end="" )
         run(meta, args, starting_noise)
         n+=1
         
