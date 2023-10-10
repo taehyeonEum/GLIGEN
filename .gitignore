@@ -3,6 +3,7 @@
 *.iml
 out
 gen
+gligen_checkpoints/*.bin
 
 ### Vim template
 [._]*.s[a-w][a-z]
