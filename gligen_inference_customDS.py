@@ -472,15 +472,46 @@ if __name__ == "__main__":
 
         # - - - - - - - - GLIGEN on image grounding for inpainting - - - - - - - - # 
         
-        # chair2 bigger
         dict(
             ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
-            input_image = "customDS/lv_chair2_bigger_square.png", #background image
-            prompt = "chair in the living room", 
-            images = [ 'customDS/chair2_bigger.png'], #object image
-            locations = [ [(242/1154), (900/1154), (1000/1154), (1055/1154)] ], # mask will be derived from box 
-            save_folder_name="customDS_chair2_bigger_squareBackground" # folder title for 5 images
+            input_image = "customDS/lv_chair2_smaller_square.png", #background image
+            prompt = "a chair in the living room", 
+            images = [ 'customDS/chair_smaller.png'], #object image
+            locations = [ [(210/1160), (462/160), (833/1160), (1121/1160)] ], # mask will be derived from box 
+            save_folder_name="customDS make chair bigger" # folder title for 5 images
         ),
+
+        dict(
+            ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
+            input_image = "customDS/lv_chair2_smaller_square.png", #background image
+            prompt = "a chair in the living room", 
+            images = [ 'customDS/chair_smaller.png'], #object image
+            locations = [ [(455/1160), (740/160), (833/1160), (1121/1160)] ], # mask will be derived from box 
+            save_folder_name="customDS make chair smaller" # folder title for 5 images
+        ),
+
+        # chair smaller original width height : 1160
+
+        # chair smaller square to  BIGGER
+        # (277, 560) , (833, 1121)
+        # ->(210, 462) , (833, 1121)
+
+        # chair smaller square to SMALLER
+        # (277, 560) , (833, 1121)
+        # -> (455, 740) , (833, 1211)
+
+        # chiar smaller similar masking
+
+
+        # # chair2 bigger
+        # dict(
+        #     ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
+        #     input_image = "customDS/lv_chair2_bigger_square.png", #background image
+        #     prompt = "chair in the living room", 
+        #     images = [ 'customDS/chair2_bigger.png'], #object image
+        #     locations = [ [(242/1154), (900/1154), (1000/1154), (1055/1154)] ], # mask will be derived from box 
+        #     save_folder_name="customDS_chair2_bigger_squareBackground" # folder title for 5 images
+        # ),
 
 
         # # chair smaller original image
@@ -501,18 +532,7 @@ if __name__ == "__main__":
         #     images = [ 'inference_images/bigben.jpg'], #object image
         #     locations = [ [0.18, 0.08, 0.62, 0.75] ], # mask will be derived from box 
         #     save_folder_name="inpainting_box_image" # folder title for 5 images
-        # ),
-
-        # # chiar smaller similar masking
-        # dict(
-        #     ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
-        #     input_image = "inference_images/beach.jpg", #background image
-        #     prompt = "a bigben on the beach", 
-        #     images = [ 'inference_images/bigben.jpg'], #object image
-        #     locations = [ [0.18, 0.08, 0.62, 0.75] ], # mask will be derived from box 
-        #     save_folder_name="inpainting_box_image" # folder title for 5 images
-        # ),
-
+        # )
     ]
 
 
