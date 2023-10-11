@@ -478,7 +478,7 @@ if __name__ == "__main__":
             input_image = "customDS/room_picture.png", #background image
             prompt = "a big picture on the wall", 
             images = [ 'customDS/picture.png'], #object image
-            locations = [ [0,15, 0.15, 0.6, 0.6] ], # mask will be derived from box 
+            locations = [ [0.15, 0.15, 0.6, 0.6] ], # mask will be derived from box 
             save_folder_name="customDS make picture on the wall bigger" # folder title for 5 images
         ),
 
