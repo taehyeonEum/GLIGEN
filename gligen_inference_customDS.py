@@ -479,7 +479,26 @@ if __name__ == "__main__":
             prompt = "", 
             images = [ 'customDS/picture.png'], #object image
             locations = [ [0.15, 0.15, 0.6, 0.6] ], # mask will be derived from box 
-            save_folder_name="NULL_TEXT customDS make picture on the wall bigger" # folder title for 5 images
+            save_folder_name="NULL_TEXT picture" # folder title for 5 images
+        ),
+
+        dict(
+            ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
+            input_image = "customDS/room_plants.jpg", #background image
+            prompt = "", 
+            images = [ 'customDS/plant.png'], #object image
+            locations = [ [0.1, 0.2, 0.4, 0.9] ], # mask will be derived from box 
+            save_folder_name="NULL_TEXT plant" # folder title for 5 images
+        ),
+
+        
+        dict(
+            ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
+            input_image = "customDS/room_blue_sofa.jpg", #background image
+            prompt = "", 
+            images = [ 'customDS/blue_sofa.png'], #object image
+            locations = [ [0.0, 0.3, 0.5, 1.0] ], # mask will be derived from box 
+            save_folder_name="NULL_TEXT blue sofa" # folder title for 5 images
         ),
 
         # dict(
