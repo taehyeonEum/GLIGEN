@@ -476,11 +476,20 @@ if __name__ == "__main__":
         dict(
             ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
             input_image = "customDS/room_picture.png", #background image
-            prompt = "a big picture on the wall", 
+            prompt = "", 
             images = [ 'customDS/picture.png'], #object image
             locations = [ [0.15, 0.15, 0.6, 0.6] ], # mask will be derived from box 
-            save_folder_name="customDS make picture on the wall bigger" # folder title for 5 images
+            save_folder_name="NULL_TEXT customDS make picture on the wall bigger" # folder title for 5 images
         ),
+
+        # dict(
+        #     ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
+        #     input_image = "customDS/room_picture.png", #background image
+        #     prompt = "a big picture on the wall", 
+        #     images = [ 'customDS/picture.png'], #object image
+        #     locations = [ [0.15, 0.15, 0.6, 0.6] ], # mask will be derived from box 
+        #     save_folder_name="customDS make picture on the wall bigger" # folder title for 5 images
+        # ),
 
         # dict(
         #     ckpt = "../gligen_checkpoints/diffusion_pytorch_model.bin",
